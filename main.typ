@@ -363,6 +363,47 @@ $
 
 == Доказательство свойства "Равномерная непрерывность характерестической функции" 
 
+Х.ф. --- равномерно непрерывна на $forall t in RR$;
+
+*Доказательство:*
+
+По определению требуется показать, что
+
+$
+forall epsilon gt 0 space exists delta (epsilon) gt 0 space #[такое что] forall |t_1 - t_2| lt delta
+$
+
+$
+| phi(t_1) - phi(t_2) | lt epsilon
+$
+
+Рассмотрим
+
+$
+| phi(t_1) - phi(t_2) | = | limits(integral)_(-infinity)^infinity (e^(i t_1 x) - e^(i t_2 x)) d F_xi (x) | lt.eq\
+lt.eq limits(integral)_(-infinity)^infinity |e^(i t_1 x) - e^(i t_2 x)| d F_xi (x) = limits(integral)_(-infinity)^infinity |e^(i t_2 x)| dot |e^(i(t_1 - t_2) x) - 1| d F_xi (x) lt.eq\
+lt.eq limits(integral)_(|x| lt.eq A) | e^(i (t_1 - t_2) x) - 1 | d F_xi (x) + 2 limits(integral)_(|x| gt A) d F_xi (x) = I_1 + I_2
+$
+
+Для заданного $epsilon gt 0$ выберем достаточно большое $A$, такое чтобы
+
+$
+limits(integral)_(|x| gt A) d F_xi (x) = P{|x| lt.eq A} lt epsilon/4
+$
+
+Фиксируем найденное $A$, воспользуемся равномерной непрерывностью функции $e^(i (t_1 - t_2) x)$ на ограниченном множестве $|x| lt.eq A$, и выберем такое $delta = delta(epsilon)$, что
+$
+| e^(i (t_1 - t_2) x) - 1 | lt epsilon/2 space #[ при] |t_1 - t_2| lt delta
+$
+
+Тогда имеем
+
+$
+| phi(t_1) - phi(t_2) | lt.eq epsilon/2 P{|x| lt.eq A} + epsilon/2 lt.eq epsilon
+$
+
+Таким образом, $phi(t)$ равномерно непрерывна.
+
 == Доказательство свойства "Существование производных и Вычисление моментов с использованием характерестической функции"
 
 == Теорема единственности.
