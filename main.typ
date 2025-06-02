@@ -491,3 +491,110 @@ $ f(x) = cases(
 Рассмотрим три случая:
 + Пусть $x <= a$. Тогда $F(x) = limits(integral)_(-infinity)^x 0 d t = 0$
 + Пусть $a < x <= b$. Тогда $F(x) = limits(integral)_(-infinity)^x f(t) d t = limits(integral)_(-infinity)^a 0 d t + limits(integral)_a^x 1 / (b - a) d t = 0 + t / (b - a) bar.v_a^b = (x - a) / (b - a)$
++ Пусть $x > b$. Тогда $F(x) = limits(integral)_(-infinity)^x f(t) d t = limits(integral)_(-infinity)^a 0 d t + limits(integral)_a^b 1 / (b - a) d t + limits(integral)_b^x 0 d t = (t - a) / (b - a) bar.v_a^b = (b - a) / (b - a) = 1$
+
+Таким образом:
+
+$ F(x) = cases(
+  0 "," x <= a,
+  (x - a) / (b - a) "," a < x <= b,
+  1 "," x > b
+)$
+
+#image("imgs/ex_3.png")
+
+== Показательное (экспоненциальное) распределение
+
+Пусть рассматривается процесс, связанный со временем. Например, работа прибора; жизнь живого организма; время, прошедшее от момента появления одного события до другого.
+
+$xi ~ "П"(lambda)$
+
+*Функция распределения:*
+
+Построим функцию распределения вероятности такой сл. величины. Здесь потребуется сделать предположение о том, что если "прибор" проработал безотказно до момента t, то в следующие $Delta t$ единиц времени он выйдет из строя с вероятностью $lambda Delta t + o(Delta t)$ (не выйдет с вероятностью $1 - (Delta t + o(Delta t))$). То есть вероятность выхода из строя на малом промежутке времени пропорциональна длине этого промежутка.
+
+$P{xi >= t}$ --- вероятность того, что отказ произойдет после момента $t$ = вероятность безотказной работы на промежутке $(0, t]$
+
+Поставим вопрос: какова вероятность безотказной работы на промежутке $(0, t + Delta t]$ = вероятность того, что отказ произойдет после $(t + Delta t)$, т.е. ${xi >= t + Delta t}$
+
+Имеем:
+
+$P{xi >= t + Delta t} = P{underbrace((xi >= t), "проработал" \ "до момента t") inter underbrace((xi >= t + Delta t | xi >= t), "Проработал ещё" Delta t \ "времени после момента t")} = P{xi >= t} dot P{xi >= t + Delta t | xi >= t} = P {xi >= t} dot (1 - lambda Delta t + o(Delta t)) = P{xi >= t} - P{xi >= t} dot lambda Delta t + P{xi >= t} dot o(Delta t)$
+
+Обозначим $overline(F(t)) = 1 - F(t) = 1 - P{xi < t} = P{xi >= t}$, тогда
+
+$overline(F)(t + Delta t) = overline(F)(t) - overline(F)(t) dot lambda Delta t + overline(F)(t) o(Delta t)$
+
+$(overline(F)(t + Delta t) - overline(F)(t)) / (Delta t) = - overline(F)(t) (lambda Delta t) / (Delta t) + overline(F)(t) (o(Delta t)) / (Delta t)$
+
+$(d overline(F)(t)) / (d t) = - lambda overline(F)(t)$
+
+Получим дифференциальное уравнение, решаем:
+
+$(d overline(F)(t)) / (overline(F)(t)) = -lambda d t$\
+$integral (d overline(F)(t)) / (overline(F) (t)) = integral -lambda d t$
+
+$overline(F)(t) = e^(- lambda t + c) = c_1 dot e^(-lambda t)$
+
+Итак,
+$overline(F)(t) = e^(-lambda t)$\
+$1 - F(t) = e^(-lambda t) => F(t) = 1 - e^(-lambda t); space t > 0$
+
+Таким образом функция распределения сл.в. $xi$ имеет вид:
+$ F(t) = cases(
+  0 "," space t <= 0,
+  1 - e^(- lambda t) "," space t > 0
+) $
+
+#image("imgs/ex_4.png")
+
+*Функция плотности:*
+
+$ f(x) = cases(
+  0 "," space x <= 0,
+  lambda e^(-lambda x) "," space x > 0
+) $
+
+#image("imgs/ex_5.png")
+
+*Свойство отсутствия последствий*
+
+Смысл его состоит в том, что выход прибора из строя на промежутке $(t, s)$ не зависит от длины промежутка $(0, t)$, а только от длины промежутка $(t, s)$:
+
+$P{t <= xi < S | xi >= t} = P{t <= xi < s inter xi >= t} / P{xi >= t} = P{t <= xi < s} / (1 - P{xi < t}) = (F(s) - F(t)) / (1 - F(t)) = (1 - e^(-lambda s) - 1 + e^(- lambda t)) / (1 - 1 + e^(-lambda t)) = (- e^(-lambda s) + e^( - lambda t)) / e^(-lambda t) = 1 - e^(-lambda (s - t)) = F(s - t) = P{0 <= xi < s - t}$
+
+#image("imgs/ex_6.png")
+
+
+== Нормальное распределение (Гаусса), (ф.р., функции плотности, графики, свойства)
+
+$xi ~ N(a, sigma^2)$
+
+Рассмотрим сл.в. $xi$ как ошибку при измерении некоторой неизвестной постоянной величины.
+
+*Функция распределения:*
+$ F(x) = 1 / (sqrt(2 pi) sigma) limits(integral)_(-infinity)^x e^((- (t - a)^2) / (2 sigma^2)) d t$
+
+#image("imgs/ex_7.png")
+
+*Функция плотности:*
+
+$ f(x) = 1 / (sqrt(2 pi) sigma) e^((- (x - a)^2) / (2 sigma^2))$
+
+#image("imgs/ex_8.png")
+
+В случае, если сл.в. $xi$ распределена с параметрами $N(0; 1)$, то говорят, что она распределена по _стандартному нормальному закону_
+
+*Свойства:*
++ (связь между $xi ~ N(a; sigma^2) "и" xi_0 ~ N(0; 1)$)
+  Если $xi ~ N(a; sigma^2)$, то $(xi - a) / sigma = xi_0 ~ N(0; 1)$\
+  Если $xi_0 ~ N(0; 1)$, то $sigma xi_0 + a = xi ~ N(a; sigma^2)$
++ (Связь с функциями Лапласа)
+  _Дифференциальной функцией Лапласа называют функцию_ $phi(x) = 1 / sqrt(2 pi) e^(- x^2 / 2)$\
+  _Интегральной функцией Лапласа называют функцию_ $Phi(x) = 1 / sqrt(2 pi) limits(integral)_0^x e^(- t^2 / 2) d t$\
+  $ f_(xi_0)(x) = phi(x); space F_(xi_0)(x) = 0.5 + Phi(x) $
++ (Правило трёх сигм)
+  Пусть $xi ~ N(a; sigma^2)$. Найдём $P{abs(xi - a) < 3 sigma} = P{a - 3 sigma < xi < a + 3 sigma}$.\
+  $P{a - 3 sigma < xi < a + 3 sigma} = P{-3 < (xi - a) / sigma < 3} = P{-3 < xi_0 < 3} = F_(xi_0)(3) - F_(xi_0)(-3) = 0.5 + Phi(3) - 0.5 - Phi(-3) = 0.49865 + 0.49865 = 0.9973$
+
+  Таким образом, правило 3-х сигм говорит о том, что у нормального распределения практически все значения лежат в промежутке $(a - 3 sigma; a + 3 sigma)$
