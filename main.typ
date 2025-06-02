@@ -1,4 +1,7 @@
-= Методические материалы для подготовки к зачёту по дисциплине "Теория вероятностей и математическая статистика" 4 семестр
+#import "conf.typ": generateAll
+#set page(numbering: "1")
+#set heading(numbering: "1.1")
+#generateAll()
 
 = Случайные события
 == Случайные события, классификация событий, операции над ними
@@ -286,3 +289,14 @@ $F_xi (x) = P{xi < x}; space F_xi (x) = P{xi in (-infinity, x)}$
 Доказательства:
 + $0 <= F(x) <= 1$ --- очевидно в силу определения $F(x) =  P{xi < x} "и" 0 <= P(A) <= 1$
 + _Неубывающая:_  
+
+
+
+
+
+
+
+
+#include "sections/section2.typ"
+#pagebreak()
+#include "sections/section3.typ"
