@@ -427,7 +427,12 @@ phi'(0) = i integral x d F(x) = i M xi.
 $
 
 == Теорема единственности.
+Пусть $F(x)$ и $G(x)$ --- функции распределения с одной и той же х.ф. $phi(t)$, т.е.
+$
+phi(t) = limits(integral)_(-infinity)^infinity |x| d F(x), space space phi(t) = limits(integral)_(-infinity)^infinity |x| d G(x)
+$
 
+Тогда $F(x) eq.triple G(x)$ в смысле $P{omega: F(x) eq.not G(x)} = 0$
 == Теорема Бохнера-Хинчина.
 
 == Теорема непрерывности.(Теорема Леви)
