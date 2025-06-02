@@ -444,4 +444,7 @@ limits(sum)_(i, j = 1)^n phi xi (t_i - t_j) lambda_i overline(lambda_j) gt.eq 0.
 $
 
 == Теорема непрерывности.(Теорема Леви)
+Пусть ${F_n (x)}_(n = 1)^infinity$ --- последовательность функций распределений, а ${phi_n (x)}_(n = 1)^infinity$ --- последовательность соответствующих х.ф. $t, x in RR$.
 
+1. Если $F_n (x) ->^omega F(x)$, то $phi_n (x) -> phi(x), space x in RR$
+2. Если $forall x in RR$ $space exists limits(lim)_(n -> infinity) phi_n (x)$, и функция $phi(x) = limits(lim)_(n -> infinity) phi_n (x)$ непрерывна в $x = 0$, то $phi(x)$ является х.ф. распределения $F(x)$, такого что $F_n (x) ->^omega F(x)$
