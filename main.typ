@@ -297,6 +297,6 @@ $F_xi (x) = P{xi < x}; space F_xi (x) = P{xi in (-infinity, x)}$
 
 
 
-
+#include "sections/section2.typ"
 #pagebreak()
 #include "sections/section3.typ"
