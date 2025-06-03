@@ -360,8 +360,118 @@ $ f(x) = 1 / (sqrt(2 pi) sigma) e^((- (x - a)^2) / (2 sigma^2))$
 
   Таким образом, правило 3-х сигм говорит о том, что у нормального распределения практически все значения лежат в промежутке $(a - 3 sigma; a + 3 sigma)$
 
+== Случайные векторы. Ф.р. сл. вектора, её свойства. Дискретные и непрерывные сл.векторы.
 
+*Случайным вектором* называется вектор $overline(xi) = (xi_1, xi_2, ..., xi_n)$, координатами которого являются случайные величины.
 
+_В нашем курсе теории вероятностей рассматриваются двумерные случайные вектора_
+
+*Функцией распределения* двумерной случайной величины называется функция:
+$ F_(xi eta)(x, y) = P{omega: xi(omega) < x; eta(omega) < y} $
+или иначе, $F(x, y) = P{xi < x; eta < y}$
+
+*Свойства ф.р:*
++ $forall x, y in RR space 0 <= F(x, y) <= 1$
++ $F_(xi eta) (x, y)$ --- неубывающая по каждому из своих аргументов и непрерывная слева.
++ $ cases(
+  limits(lim)_(x -> +infinity) F_(xi eta)(x, y) = F_eta (y),
+  limits(lim)_(y -> + infinity) F_(xi eta) (x, y) = F_xi (x)) $\
+  $ limits(lim)_(x -> + infinity \ y -> + infinity) F_(xi eta) (x, y) = 1 $ \
+  $ limits(lim)_(x -> -infinity) F_(xi eta)(x, y) = limits(lim)_(y -> -infinity) F_(xi eta)(x, y) = limits(lim)_(x -> - infinity \ y -> - infinity) F_(xi eta) (x, y) = 0 $
+
+Сл. вектор $(xi, eta)$ называется *дискретным*, если сл.в. $xi "и" eta$ дискретны.
+
+_Речь идёт об абсолютно непрерывных сл. векторах_
+
+Сл. вектор называется *абсолютно непрерывным*, если $forall x, y in RR$ ф.р. может быть представлена в виде 
+$ F_(xi eta) (x, y) = limits(integral)_(-infinity)^x limits(integral)_(-infinity)^y f(u, v) d u d v $
+где $f(x, y)$ --- функция плотности двумерного распределения вероятностей.
+
+== Независимые сл.величины. Критерий независимости сл.величин.
+
+Случайные величины $xi "и" eta$ называются *независимыми*, если
+$ forall x, y in RR P{omega : xi(omega) < x; eta(omega < y)} = P{omega: xi(omega < x)} dot P{omega: eta(omega) < y} $
+
+*Критерий независимости дискретных случайных величин*\
+Дискретные сл.в. независимы $<=> forall i, j$ $ p_(i j) = p_i dot p_j \
+P{xi = x_i; eta = y_j} = P{xi = x_i} dot P{eta = y_j} $
+
+*Критерий независимости абсолютно непрерывных случайных величин*\
+Абсолютно непрерывные случайные величины $xi "и" eta$ независимы $<=> forall x, y in RR f_(xi eta) (x, y) = f_xi (x) dot f_eta (y)$
+
+Доказательство: _Необходимость:_ Пусть сл.в. $xi, eta$ независимы, т.е. $F_(xi eta) (x, y) = F_xi (x) dot F_eta (y)$. Тогда
+
+$underbrace((diff^2 F_(xi eta) (x, y)) / (diff x diff y), f_(xi eta) (x, y)) = (diff^2) / (diff x diff y) F_xi (x) dot F_eta (y) = underbrace( (diff F_xi (x)) / (diff x), f_xi (x)) dot underbrace( (diff F_eta (y)) / (diff y), f_eta (y))$
+
+Таким образом $f_(xi eta) (x, y) = f_xi (x) dot f_eta (y)$
+
+_Достаточность:_ Пусть верно, что $f_(xi eta) (x, y) = f_xi (x) dot f_eta (y)$, тогда
+
+$F_(xi eta) (x, y) = limits(integral)_(-infinity)^x limits(integral)_(-infinity)^y f(u, v) d u d v = limits(integral)_(-infinity)^x limits(integral)_(-infinity)^y f_xi (u) f_eta (v) d u d v = limits(integral)_(-infinity)^x f_xi (u) d u limits(integral)_(-infinity)^y f_eta (v) d v = F_xi (x) F_eta (y)$
+
+== Числовые характеристики сл.в: Математическое ожидание и его свойства.
+
+_Рассматривается пример построения мат.ожидания:_\
+Пусть имеется дискретная случайная величина $xi$ со значениями $x_1, x_2, ..., x_k; space P{xi = x_k} = p_k$
+
+Пусть проведено "очень большое" $N >> k$ количество наблюдений за сл.в. $xi$ и получены результаты: $a_1, a_2, ..., a_N$, среди которых $i_1$ раз встречается значение $x_1$, $i_2$ раз встречается значение $x_2$ и т.д.
+
+Найдём среднее арифметическое значение наблюдавшихся значений:
+
+$(a_1 + a_2 + ... + a_N) / N = (x_1 dot i_1 + x_2 dot i_2 + ... + x_k dot i_k) / N = limits(sum)_(j = 1)^k x_j i_j / N$
+
+Рассмотрим, что происходит с полученным значением при $N -> infinity$. $x_j$ не меняется, т.к. это значение случайной величины. $i_j / N limits(->)_(N -> infinity) P{xi = x_i}$, т.е. частоты наблюдения значения $x_j$ стремятся к вероятности этого значения. Получаем:
+$ limits(sum)_(j = 1)^k x_j i_j / N limits(->)_(N -> infinity) limits(sum)_(j = 1)^k x_j p_j = cal(M) xi $
+
+Число $cal(M) xi$ называют *математическим ожиданием*. Оно не является случайным и может быть вычислено #underline[до] начала наблюдений за сл.в. $xi$.
+
+*Определение мат. ожидания.* Математическим ожиданием сл.в. $xi$ называется величина $ cal(M) xi = limits(integral)_Omega xi(omega) d P(omega) $
+Если вероятностная мера $P(omega)$ может быть определена через функцию распределения, то 
+$ cal(M) xi = limits(integral)_(-infinity)^infinity x d F(x) $
+
+#align(center, grid(
+  columns: 2,
+  column-gutter: 10pt,
+  align: center,
+  
+  [*Для дикретной сл.в.* \
+  $ cal(M) xi = limits(sum)_(k = 1)^infinity x_k p_k $\
+  $d F(x)$ задается \ числами $p_k = P{xi = x_k}$], 
+  [*Для абсолютно непрерывной сл.в.*\
+  $ cal(M) xi = limits(integral)_(-infinity)^infinity x f(x) d x $\
+  здесь $d F(x) = f(x) d x$ ]))
+
+*Свойства мат.ожидания:*
+
++ $cal(M) C = C; space C --- "const"$
++ $cal(M) C xi = C cal(M) xi$
++ $cal(M) (xi plus.minus eta) = cal(M) xi plus.minus cal(M) eta$
++ Если сл.в. $xi "и" eta$ независимы, то $ cal(M) xi eta = cal(M) xi cal(M) eta, "где" \
+  cal(M) xi eta = limits(sum)_(i = 1)^infinity limits(sum)_(j = 1)^infinity x_i y_j p_(i j) "для дискретных сл.в."\
+  cal(M) xi eta = limits(integral)_(-infinity)^infinity limits(integral)_(-infinity)^infinity x y f(x, y) d x d y "для абс. непр. сл. в." $
++ Если $xi >= 0$, то $cal(M) xi >= 0$
++ *(Обобщённое неравенство Чебышёва)*\
+  Пусть $xi$ --- неотрицательная случайная величина, а $g(x)$ --- неубывающая на множестве значений случайной величины $xi$ функция. Тогда $ forall epsilon > 0 space P{xi >= epsilon} <= (cal(M) g(xi)) / g(epsilon) $
+
+== Обобщенное неравенство Чебышёва. Следствие (неравенство Чебышёва)
+
+*Обобщённое неравенство Чебышёва:*\
+  Пусть $xi$ --- неотрицательная случайная величина, а $g(x)$ --- неубывающая на множестве значений случайной величины $xi$ функция. Тогда $ forall epsilon > 0 space P{xi >= epsilon} <= (cal(M) g(xi)) / g(epsilon) $
+
+Доказательство:
+
+$ cal(M) g(xi) = limits(integral)_(-infinity)^infinity g(x) d F(x) >= limits(integral)_epsilon^infinity g(x) d F(x) underbrace(>=, g(x) space - "неубывающая") limits(integral)_epsilon^infinity g(epsilon) d F(x)= \ = underbrace(g(epsilon), "const") limits(integral)_epsilon^infinity d F(x) = g(epsilon) (F(x) bar.v_epsilon^(+infinity)) = g(epsilon) (limits(lim)_(x -> infinity) F(x) - F(epsilon)) = \ = g(epsilon) (1 - P{xi < epsilon}) = g(epsilon) P{xi >= epsilon} $
+
+В итоге:
+$ cal(M) g(epsilon) >= g(epsilon) P{xi >= epsilon} \
+P{xi >= epsilon} <= (cal(M) g(xi)) / g(epsilon) $
+
+*(Следствие) неравенство Чебышёва:*\
+Пусть $xi$ --- сл.в. с м. о. $cal(M) xi < +infinity$. Тогда
+$ forall epsilon P{abs(xi - cal(M) xi) < epsilon} >= 1 - (cal(D) xi) / epsilon^2 $
+или
+$ P{abs(xi - cal(M) xi) >= epsilon} <= (cal(D) xi) / epsilon^2 $
+где $cal(D) xi = cal(M)(xi - cal(M) xi)^2$
 
 == Вычисление математического ожидания для распределений Бернулли, биномиального распределения, распределения Пуассона, равномерного непрерывного, показательного, нормального законов распределения. (14 вопрос)
 === Матожидание для распределений Бернулли
