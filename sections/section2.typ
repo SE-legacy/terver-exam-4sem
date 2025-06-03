@@ -485,7 +485,7 @@ $
 Математическое ожидание сл. в. $xi$ равно
 
 $
-M xi = limits(sum)_(k = 0)^infinity k^2 (lambda e^(- lambda))/(k!) = lambda e^(- lambda) limits(sum)_(k = 0)^infinity k (lambda^(k - 1))/((k - 1)!) = lambda e^(- lambda) e^(lambda) = lambda
+M xi = limits(sum)_(k = 0)^infinity k (lambda e^(- lambda))/(k!) = lambda e^(- lambda) limits(sum)_(k = 0)^infinity (lambda^(k - 1))/((k - 1)!) = lambda e^(- lambda) e^(lambda) = lambda
 $
 Математическое ожидание сл. в. $xi^2$ равно
 
