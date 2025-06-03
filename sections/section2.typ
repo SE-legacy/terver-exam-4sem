@@ -28,8 +28,6 @@ $B(Sigma)$ относительно операций $union, space inter space \
 
 т.е. $d F(t) = f(t) d t$.
 
-// а вот то, что было для дискретной величины, оно типа не нужно? Его просто нет
-
 == Функция распределения (ф.р.) и ее свойства.
 
 Функцией распределения вероятностей случайной величины $xi$ называется функция $ F(x) = P{omega : xi(omega) < x} $
@@ -79,7 +77,6 @@ $ limits(lim)_(n->infinity) F(x_n) = limits(lim)_(n -> infinity) P{xi in (- infi
 Пусть $Delta x -> 0$.
 $ underbrace(F(x_0 + 0), "т.к. F(x) непрерывна слева, но не справа") - F(x_0) = P{xi = x_0} $
 
-// Пример построения на 8 баллов?
 
 == Теорема о существовании сл.в., соответствующей функции со свойствами ф.р.
 
@@ -90,7 +87,6 @@ $ P{xi < x} = F(x) $
 Пусть $f(x)$ --- неотрицательная на $RR$ функция, такая, что $limits(integral)_(-infinity)^infinity f(x) d x = 1$. Тогда существует вероятностное пространство $(Omega, cal(F), P)$ и сл. в. $xi$ на нем, для которой $f(x)$ является функцией плотности распределения вероятности, т.е.
 $ P{xi < x} = limits(integral)_(-infinity)^x f(t) d t $
 
-// А где доказательство?!
 
 == Функция плотности распределения сл.в. Ее свойства.  
 *Функцией плотности распределения вероятностей* случайной величины $xi$ называется функция $f(x)$, такая что
@@ -532,13 +528,13 @@ $
 Математическое ожидание сл. в. $xi_0$ равно
 
 $
-M xi_0 = limits(integral)_(-infinity)^infinity x dot e^(- (x^2)/2) d x = limits(integral)_(-infinity)^0 x dot e^(- (x^2)/2) d x + limits(integral)_(0)^infinity x dot e^(- (x^2)/2) d x (=)
+M xi_0 = limits(integral)_(-infinity)^infinity x dot e^(- (x^2)/2) d x = limits(integral)_(-infinity)^0 x dot e^(- (x^2)/2) d x + limits(integral)_(0)^(+infinity) x dot e^(- (x^2)/2) d x (=)
 $
 
 Введем замену переменной $t = x^2/2$, тогда $d t = x d x$
 
 $
-(=) - limits(integral)_(-infinity)^0 e^(- t) d t + limits(integral)_(0)^infinity e^(- t) d t = 0 
+(=) - limits(integral)_(0)^(+infinity) e^(- t) d t + limits(integral)_(0)^(+infinity) e^(- t) d t = 0 
 $
 
 Математическое ожидание сл. в. $xi_0^2$ равно
