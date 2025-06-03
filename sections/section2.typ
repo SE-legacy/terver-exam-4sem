@@ -457,4 +457,100 @@ $
 Здесь использовался интеграл Пуассона, $limits(integral)_(-infinity)^infinity e^(- (x^2)/2) d x = sqrt(2 pi)$.
 
 == Числовые характеристики сл.величин: Начальные, центральные и смешанные  моменты. Дисперсия и ее свойства. Ковариация и её свойства. Коэффициент корреляции и его свойства. (15 вопрос)
+=== Моменты распределений.
+1. *Начальный момент* $k$-ого порядка --- это величина:
+	$
+	m_k = M xi^k;
+	$ 
+	если $M |xi|^k lt + infinity$
 
+	Вероятности: $m_1 = M xi; m_2 = M xi^2$
+2. *Центральным моментом* $k$-ого порядка
+
+	$
+		mu_k = M (xi - M xi)^k ; M|xi| lt + infinity
+	$
+
+	В частности
+
+	$ mu_1 = M(xi - M xi) = M xi - M(M xi) = M xi - M xi = 0 $
+	$ mu_2 = M(xi - M xi)^2 = D xi $
+3. *Смешанные моменты* $k$-ого порядка
+
+	$
+	alpha_(i j) = M(xi - M xi)^i (eta - M eta)^j; i + j = k
+	$
+
+	$
+	M|xi| lt + infinity\
+	M|eta| lt + infinity\
+	k = 1\
+	alpha_(1 0) = M(xi - M xi) = mu_1 = 0\
+	alpha_(0 1) = M(eta - M eta) = mu_1 = 0\
+	alpha_(2 0) = M(xi - M xi)^2 = mu_2 = D xi\
+	alpha_(0 2) = M(eta - M eta)^2 = mu_2 = D eta\
+	alpha_(1 1) = M(xi - M xi)(eta - M eta) = c o v(xi; eta)
+	$
+
+=== Дисперсия и ее свойства
+/ Дисперсия:: Дисперсией случайной величины $xi$ назовем
+$
+D xi = M (xi - M xi)^2
+$
+
+*Свойства:*
+1. $D xi gt.eq 0; space forall xi space$ с $space M xi lt + infinity$
+2. $D C = 0; c - c o n s t $\
+3. $D C xi = C^2 D xi; C - c o n s t$
+
+	$D C xi = M (C xi - M C xi)^2 = M (C(xi - M xi))^2 = \
+	= M C^2 (xi - M xi)^2) = C^2 M (xi - M xi)^2 = C^2 D xi$
+4. Если $xi, eta$ --- независимы, то $D(xi plus.minus eta) = D xi + D eta$
+5. Если $xi, eta$ такие, что $M xi lt + infinity$, $M eta lt + infinity$, то $D (xi plus.minus eta) = D xi + D eta plus.minus 2 c o v(xi, eta)$\
+	где $c o v(xi, eta) = M (xi - M xi)(eta - M eta)$ --- ковариация случайных величин
+6. $D xi = M xi^2 - (M xi)^2$ (*НА ИПСИЛОНЕ ЕГО НЕТ, НО ДЛЯ ОБЩЕГО РАЗВИТИЯ ПУСТЬ БУДЕТ*)
+
+$ D xi = M (xi - M xi)^2 = M(xi^2 - 2 xi M xi + (M xi)^2) = M xi^2 - 2 M xi M xi + (M xi)^2) = M xi^2 - (M xi)^2 $
+
+
+=== Ковариация сл. в. и ее свойства
+/ Ковариация сл. в. $xi$ и $eta$: --- характеристика совместного разброса сл. в. $xi$ и $eta$ относительно своих средних значений.
+
+*Свойства:*
+1. $c o v(xi, eta) = c o v(eta, xi)$ --- симметрична
+2. $c o v(xi, xi) = D xi$; $space c o v(eta, eta) = D eta$
+3. $c o v(xi, eta) = 0$, если $xi$ и $eta$ независимы
+4. $c o v(xi, eta) = M xi eta - M xi M eta$
+
+Покажем 4.
+
+$
+c o v(xi, eta) = M(xi - M xi) (eta - M eta) = M(xi eta - eta M xi - xi M eta + M xi + M eta)=\
+= M xi eta - M (eta M xi) - M(xi M eta) + M (M xi M eta) =\
+= M xi eta - M xi M eta - M eta M xi + M xi M eta = M xi eta - M xi M eta
+$
+
+=== Коэффициент корреляции и его свойства
+/ Коэффициент корреляции: --- величина:
+$
+r = r (xi, eta) = (c o v(xi, eta))/(sqrt(D xi) sqrt(D eta))
+$
+
+Так же можно записать:
+
+$
+r = (c o v(xi, eta))/(sqrt(D xi) sqrt(D eta)) = (M xi eta - M xi M eta)/(sqrt(D xi) sqrt(D eta))
+$
+
+*Свойства:*
+1. $|r| lt 1$
+	
+	*Доказательство:*
+	$
+		|r| = (|c o v(xi, eta)|)/(sqrt(D xi) sqrt(D eta)) = (|M xi eta - M xi M eta|)/(sqrt(D xi) sqrt(D eta)) lt.eq\
+		lt.eq (sqrt(M(xi - M xi)^2) sqrt(M(eta - M eta)^2))/(sqrt(D xi) sqrt(D eta)) = (sqrt(D xi) sqrt(D eta))/(sqrt(D xi) sqrt(D eta)) = 1
+	$
+2. Если $xi$ и $eta$ независимы, то $r = 0$
+
+	Следует из того, что у независимых сл. в. $c o v(xi, eta) = 0$. Обратное неверно!!!
+3. Если $xi$ и $eta$ линейно связаны $(eta = a xi + b)$, то $|r| = 1$ и наооборот $|r| = 1$ означает, что между $xi$ и $eta$ существует линейная связь.
