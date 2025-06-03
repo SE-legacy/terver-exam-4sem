@@ -49,10 +49,10 @@
 
 == Определения: мера, конечно-аддитивная, счётно-аддитивная
 
-*Конечно-аддитивной вероятностной мерой* над множеством $Omega$ называется функция множества $Q(A)$, такая что: 
-+ $Q(Omega) = 1$
-+ $Q(A) >= 0 space forall A in cal(A)$
-+ Если $A, B in cal(A) and A inter B = emptyset$, то $Q(A union B) = Q(A) + Q(B)$
+*Конечно-аддитивной вероятностной мерой* над множеством $Omega$ называется функция множества $Q(A)$, такая что: \
+A1) $Q(Omega) = 1$ \
+A2) $Q(A) >= 0 space forall A in cal(A)$ \
+A3)  Если $A, B in cal(A) and A inter B = emptyset$, то $Q(A union B) = Q(A) + Q(B)$
 
 *Счётно-аддитивной вероятностной мерой* над множеством $Omega$ называется функция множества $P(A)$, такая что\
 P1) $P(Omega) = 1$\
@@ -60,6 +60,8 @@ P2) $P(A) >= 0 space forall A in cal(F)$ \
 P3) Если ${A_i}_(i = 1)^infinity in cal(F), A_i inter A_j = emptyset space forall i != j$, то $P(union.big_(i = 1)^infinity A_i) = Sigma_(i = 1)^infinity P(A_i)$\
   В случае, если речь идет только про несовместные события:\
   $P(limits(union.sq.big)_(i = 1)^infinity A_i) = limits(sum)_(i = 1)^infinity P(A_i)$
+
+Аксиомы A1-A3, P1-P3 называются *аксиомами Колмогорова*.
 
 == Построение меры Лебега. Верхняя, нижняя, мера Лебега. Измеримое по Лебегу множество
 
