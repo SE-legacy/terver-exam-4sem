@@ -31,11 +31,6 @@
   + Если $A in cal(A) => overline(A) in cal(A)$
   + Если $A, B in cal(A) => A union B in cal(A)$
 
-*$sigma$-алгеброй* назовём класс подмножеств $cal(F)$ такой, что
-  + $Omega in cal(F)$
-  + Если $A in cal(F)$, то $overline(A) in cal(F)$
-  + Если ${A_i}_(i=1)^infinity in cal(F)$, то $limits(union.big)^infinity_(i=1) A_i in cal(F)$
-  
 *$sigma$-алгеброй событий* называется множество $cal(F)$ подмножеств $A subset Omega$, удовлетворяющее условиям:
 
 A1) $Omega in cal(F)$\
@@ -206,7 +201,7 @@ $ P(A| A_i) gt.eq 0 $
 
 Тогда
 
-$ P(A) = limits(sum)_(i = 1)^infinity P(A_i) dot P(A \\ A_i) $
+$ P(A) = limits(sum)_(i = 1)^infinity P(A_i) dot P(A | A_i) $
 
 Доказательство:
 
