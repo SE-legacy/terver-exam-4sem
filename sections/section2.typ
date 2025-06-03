@@ -435,8 +435,8 @@ $
 Введем замену переменной $t = x^2/2$, тогда $d t = x d x$
 
 $
-(=) - limits(integral)_(0)^infinity e^(- t) d t + limits(integral)_(0)^infinity e^(- t) d t = 0 
-$// TODO: что-то мне подсказывает, что первый интеграл должен быть от -infinity до 0, второй от 0 до infinity, но там оба от 0 до infinity. Надо проверить
+(=) - limits(integral)_(-infinity)^0 e^(- t) d t + limits(integral)_(0)^infinity e^(- t) d t = 0 
+$
 
 Математическое ожидание сл. в. $xi_0^2$ равно
 
