@@ -38,7 +38,7 @@
   
 *$sigma$-алгеброй событий* называется множество всех возможных подмножеств множества $Omega$, т.е. множество всех мыслимых экспериментов.
 
-*Минимальной $sigma$-алгеброй* над классом $K$ называется $sigma(k)$, такая, что $K in sigma(K)$, а сама $sigma(K) subset cal(F) = sigma(Omega)$
+*Минимальной $sigma$-алгеброй* над классом $K$ называется $sigma(K)$, такая, что $K in sigma(K)$, а сама $sigma(K) subset cal(F) = sigma(Omega)$
 
 *Борелевская $sigma$-алгебра:*\
 Борелевская $sigma$-алгебра $cal(B)$ --- это множество всех возможных подмножеств на числовой прямой, которые представимы ввиде конечного или счетного объединения интервалов/промежутков $cal(B)(RR) = {[a, b], space (a, b), space [a, b), space (a, b], space(- infinity, a), space (b, + infinity)}$
@@ -91,13 +91,13 @@ $ A_i inter A_j = emptyset, space P(limits(union)_(i = 1)^infinity A_i) = limits
 + Пусть $A subset.eq B$. Тогда $ P(A) <= P(B)) " и " P(B \\ A) = P(B) - P(A) $
   Док-во: представим $ B = A union.sq (B \\ A) $
   Тогда 
-  $ P(B) = P(A union (B \\ A)) = underbrace(P(A), >=0) + underbrace(P(B \\ A), >=0) >= P(A) $
+  $ P(B) = P(A union.sq (B \\ A)) = underbrace(P(A), >=0) + underbrace(P(B \\ A), >=0) >= P(A) $
 + (Теорема сложения вероятностей)\
   Пусть $A, B in cal(F)$, тогда вероятность суммы этих событий равна сумме вероятностей, минус вероятность произведения:
   $ P(A union B) = P(A) + P(B) - P(A inter B) $
   Док-во: Запишем $C = A union B$ в виде суммы несовместных событий. Тогда 
-  $ P(A union B) = P(A union.sq (B \\ (A inter B)) = P(A) + P( B \\ A B) =\
-    = P(A) + P(B \\ A B) =  P(A) + P(B) - P(A inter B) $
+  $ P(A union B) = P(A union.sq (B \\ (A inter B)) = P(A) + P( B \\ A inter B) =\
+    =  P(A) + P(B) - P(A inter B) $
 + (Сравнение) \
   $ P (cal(A) union B) lt.eq P(cal(A)) + P(B) $
 
@@ -158,7 +158,7 @@ $P(A) = k/n$ --- называется *классической вероятно
 
 - $Omega = {omega_1, omega_2, ..., omega_n, ...}$ --- #underline("неравновозможные") исходы
 - $cal(F)$ --- все возможные события в эксперименте.
-- $P(A) = limits(sum)_(omega in A) P(omega)$, где $P(omega_i) = p_i, p_i > 0, limits(sum)_(i = 1)^infinity = 1$
+- $P(A) = limits(sum)_(omega in A) P(omega)$, где $P(omega_i) = p_i, p_i > 0, limits(sum)_(i = 1)^infinity p_i = 1$
 
 _Замечание: В этом пространстве множество исходов либо счетное, но не равновозможные, либо несчетные, но равновозможные_
 
@@ -186,7 +186,7 @@ $ P(A inter B) = P(B) dot P(A|B) $
 $ A_1,A_2,A_3 in cal(F); space  P(A_1) > 0$ $P(A_1 inter A_2) > 0 $
 Тогда
 
-$ P(A_1 inter A_2 inter A_3) = P(A_1) P(A_2|A_1) dot P(A_3 | A_1 subset A_2) $
+$ P(A_1 inter A_2 inter A_3) = P(A_1) P(A_2|A_1) dot P(A_3 | A_1 inter A_2) $
 
 == Формулы полной вероятности и Байеса.
 
@@ -223,8 +223,7 @@ $
 
 *Теорема Байеса*
 
-Пусть ${A_i}_(i = 1)^infinity$ такое, чтоо $limits(union.big.sq)_(i = 1)^infinity A_i = Omega; P(A_i) > 0$ и для $A_i in cal(F)$ п
-
+Пусть ${A_i}_(i = 1)^infinity$ такое, что $limits(union.big.sq)_(i = 1)^infinity A_i = Omega; P(A_i) > 0$ и для $A in cal(F)$ известно, что $P(A) > 0$ и $ P(A|A_i) >=0$
 
 Тогда $ P(A_i | A) = (P(A_i) dot P(A | A_i))/(P(A)) $
 
@@ -255,7 +254,7 @@ $
 #image("../imgs/007.png")
 
 $
-  P(A inter overline(B)) = P(A \\ (A B)) = P(A) - P(A inter B) =\
+  P(A inter overline(B)) = P(A \\ (A inter B)) = P(A) - P(A inter B) =\
   = P(A) - P(A) dot P(B) = P(A) (1 - P(B)) = P(A) dot P(overline(B))
 $
 
