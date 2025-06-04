@@ -80,8 +80,7 @@ P3) Если ${A_i}_(i = 1)^infinity in cal(F), A_i inter A_j = emptyset space f
 *Вероятностная мера* --- функция $P: cal(F) -> [0, 1]$, удовлетворяющая условиям:
 + $P(Omega) = 1;$
 + $P(A) gt.eq 0, space forall A in cal(F)$
-+ $forall {A_i}_(i = 1)^infinity in cal(F)$, такой, что $forall i eq.not j$:
-$ A_i inter A_j = emptyset, space P(limits(union)_(i = 1)^infinity A_i) = limits(sum)_(i = 1)^infinity P(A_i). $
++ $forall {A_i}_(i = 1)^infinity in cal(F)$, такой, что $forall i eq.not j A_i inter A_j = emptyset => space P(limits(union)_(i = 1)^infinity A_i) = limits(sum)_(i = 1)^infinity P(A_i). $
 
 *Свойства вероятностной меры:*
 + $P(overline(A)) = 1 - P(A)$
@@ -105,21 +104,9 @@ $ P (limits(union)_(i = 1)^n A _i) lt.eq limits(sum)^n_(i = 1) P(A_i) $
 
 *Свойство непрерывности вероятностной меры:*
 
-  Пусть ${A_i}^infinity_(i=1)$ такое что:
+  Пусть ${A_i}^infinity_(i=1)$ такое что $A_i subset A_(i + 1) forall i = 1,2 ...$. Тогда $P(limits(union)_(i = 1)^infinity cal(A)_i) = lim_(n->infinity) P (cal(A)_n)$.
 
-  $ A_i subset A_(i + 1) forall i = 1,2 ... $
-
-  Тогда
-
-  $ P(limits(union)_(i = 1)^infinity cal(A)_i) = lim_(n->infinity) P (cal(A)_n) $
-
-  Если 
-  $ {A_i}^infinity_(i = 1) $
-
-  Такое что
-  $ A_(i + 1) subset A_i $
-  то
-  $ P(limits(inter)^infinity_(i = 1) A_i) = limits(lim)_(n -> infinity) P (A_n) $
+  Если ${A_i}^infinity_(i = 1)$  такое, что $A_(i + 1) subset A_i$, то $P(limits(inter)^infinity_(i = 1) A_i) = limits(lim)_(n -> infinity) P (A_n)$
 
 Доказательство: Представим событие $A = limits(union.big)_(i = 1)^infinity A_i$ в виде суммы несовместных событий:
 
@@ -128,7 +115,7 @@ $B_1 = A, space B_2 = A_2 \\ A_1, space ...$
 
 Тогда применим аксиому $P_3$ ($P(limits(union.sq.big)_(i = 1)^infinity A_i) = limits(sum)_(i = 1)^infinity P(A_i)$):
 
-$ P(limits(union.big)_(i = 1)^infinity A_i) = P(limits(union.sq.big)_(i = 1)^infinity B_i) = limits(sum)_(i = 1)^infinity P(B_i) = limits(lim)_(n -> +infinity) limits(sum)^n P(B_i) = limits(lim)_(n -> +infinity) P(limits(union.sq.big)_(i = 1)^n) B_i = limits(lim)_(n -> infinity) P(A_n) $
+$ P(limits(union.big)_(i = 1)^infinity A_i) = P(limits(union.sq.big)_(i = 1)^infinity B_i) = limits(sum)_(i = 1)^infinity P(B_i) = limits(lim)_(n -> +infinity) limits(sum)^n P(B_i) = limits(lim)_(n -> +infinity) P(limits(union.sq.big)_(i = 1)^n B_i) = limits(lim)_(n -> infinity) P(A_n) $
 
 == Классическое вероятностное пространство. Классическое определение вероятности.
 
