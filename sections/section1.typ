@@ -80,8 +80,7 @@ P3) Если ${A_i}_(i = 1)^infinity in cal(F), A_i inter A_j = emptyset space f
 *Вероятностная мера* --- функция $P: cal(F) -> [0, 1]$, удовлетворяющая условиям:
 + $P(Omega) = 1;$
 + $P(A) gt.eq 0, space forall A in cal(F)$
-+ $forall {A_i}_(i = 1)^infinity in cal(F)$, такой, что $forall i eq.not j$:
-$ A_i inter A_j = emptyset, space P(limits(union)_(i = 1)^infinity A_i) = limits(sum)_(i = 1)^infinity P(A_i). $
++ $forall {A_i}_(i = 1)^infinity in cal(F)$, такой, что $forall i eq.not j A_i inter A_j = emptyset => space P(limits(union)_(i = 1)^infinity A_i) = limits(sum)_(i = 1)^infinity P(A_i). $
 
 *Свойства вероятностной меры:*
 + $P(overline(A)) = 1 - P(A)$
