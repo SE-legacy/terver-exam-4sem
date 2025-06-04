@@ -115,7 +115,7 @@ $B_1 = A, space B_2 = A_2 \\ A_1, space ...$
 
 Тогда применим аксиому $P_3$ ($P(limits(union.sq.big)_(i = 1)^infinity A_i) = limits(sum)_(i = 1)^infinity P(A_i)$):
 
-$ P(limits(union.big)_(i = 1)^infinity A_i) = P(limits(union.sq.big)_(i = 1)^infinity B_i) = limits(sum)_(i = 1)^infinity P(B_i) = limits(lim)_(n -> +infinity) limits(sum)^n P(B_i) = limits(lim)_(n -> +infinity) P(limits(union.sq.big)_(i = 1)^n) B_i = limits(lim)_(n -> infinity) P(A_n) $
+$ P(limits(union.big)_(i = 1)^infinity A_i) = P(limits(union.sq.big)_(i = 1)^infinity B_i) = limits(sum)_(i = 1)^infinity P(B_i) = limits(lim)_(n -> +infinity) limits(sum)^n P(B_i) = limits(lim)_(n -> +infinity) P(limits(union.sq.big)_(i = 1)^n B_i) = limits(lim)_(n -> infinity) P(A_n) $
 
 == Классическое вероятностное пространство. Классическое определение вероятности.
 
