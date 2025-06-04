@@ -105,21 +105,9 @@ $ P (limits(union)_(i = 1)^n A _i) lt.eq limits(sum)^n_(i = 1) P(A_i) $
 
 *Свойство непрерывности вероятностной меры:*
 
-  Пусть ${A_i}^infinity_(i=1)$ такое что:
+  Пусть ${A_i}^infinity_(i=1)$ такое что $A_i subset A_(i + 1) forall i = 1,2 ...$. Тогда $P(limits(union)_(i = 1)^infinity cal(A)_i) = lim_(n->infinity) P (cal(A)_n)$.
 
-  $ A_i subset A_(i + 1) forall i = 1,2 ... $
-
-  Тогда
-
-  $ P(limits(union)_(i = 1)^infinity cal(A)_i) = lim_(n->infinity) P (cal(A)_n) $
-
-  Если 
-  $ {A_i}^infinity_(i = 1) $
-
-  Такое что
-  $ A_(i + 1) subset A_i $
-  то
-  $ P(limits(inter)^infinity_(i = 1) A_i) = limits(lim)_(n -> infinity) P (A_n) $
+  Если ${A_i}^infinity_(i = 1)$  такое, что $A_(i + 1) subset A_i$, то $P(limits(inter)^infinity_(i = 1) A_i) = limits(lim)_(n -> infinity) P (A_n)$
 
 Доказательство: Представим событие $A = limits(union.big)_(i = 1)^infinity A_i$ в виде суммы несовместных событий:
 
