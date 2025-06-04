@@ -645,7 +645,7 @@ r = (c o v(xi, eta))/(sqrt(D xi) sqrt(D eta)) = (M xi eta - M xi M eta)/(sqrt(D 
 $
 
 *Свойства:*
-1. $|r| lt 1$
+1. $|r| lt.eq 1$
 	
 	*Доказательство:*
 	$
