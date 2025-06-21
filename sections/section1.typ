@@ -113,7 +113,7 @@ $ P (limits(union)_(i = 1)^n A _i) lt.eq limits(sum)^n_(i = 1) P(A_i) $
 
   $ P(limits(union)_(i = 1)^infinity cal(A)_i) = lim_(n->infinity) P (cal(A)_n) $
 
-  Если
+  Если 
   $ {A_i}^infinity_(i = 1) $
 
   Такое что
